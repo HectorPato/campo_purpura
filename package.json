@@ -1,0 +1,17 @@
+{
+  "name": "campo_purpura",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/vue": "^5.0.7",
+    "astro": "^5.3.1",
+    "module_name": "^1.0.0",
+    "vue": "^3.5.13"
+  }
+}
