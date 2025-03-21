@@ -1,5 +1,5 @@
 ---
-const { titulo, tipo, descripcion } = Astro.props;
+const { titulo, tipo, descripcion, imagen } = Astro.props;
 ---
 
 <div class="container mb-4">
@@ -10,27 +10,25 @@ const { titulo, tipo, descripcion } = Astro.props;
                 <div class="cotainer">
                     <div class="card" style="width: 20rem;">
                         <div class="card-body">
-                        <h5 class="card-title">{titulo ?? "ESTO ES UN TITULO"}</h5>
+                        <h2 class="card-title">{titulo ?? "ESTO ES UN TITULO"}</h2>
                         <p class="card-text"> {descripcion} </p>
-                        <a href="#" class="btn btn-primary">Ir a Eventos</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-6 animate__animated animate__backInRight"> 
-                <img src="/imgs/camp1.jpeg" width="300" height="300" class="card-img-top" alt="...">
+                <img src={imagen} width="300" height="300" class="card-img-top" alt="...">
             </div>
         : 
             <div class="col-6 animate__animated animate__backInLeft"> 
-                <img src="/imgs/camp1.jpeg" width="300" height="300" class="card-img-top" alt="...">
+                <img src={imagen}  width="300" height="300" class="card-img-top" alt="...">
             </div>
             <div class="col-6 animate__animated animate__backInRight">
                 <div class="cotainer">
                     <div class="card" style="width: 20rem;">
                         <div class="card-body">
-                        <h5 class="card-title">{titulo ?? "ESTO ES UN TITULO"}</h5>
+                        <h2 class="card-title">{titulo ?? "ESTO ES UN TITULO"}</h2>
                         <p class="card-text"> {descripcion} </p>
-                        <a href="#" class="btn btn-primary">Ir a Eventos</a>
                         </div>
                     </div>
                 </div>

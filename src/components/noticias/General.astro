@@ -3,7 +3,8 @@ import Noticias from "./Noticias.astro";
 const jsonData = [
     {
         tipo: "1",
-        titulo: 'Campeonaro de futbol',
+        titulo: 'Campeonato de futbol',
+        imagen: "/imgs/camp10.jpeg",
         descripcion: `El campeonato de futbol 
         en Campo Purpura reunió a equipos en un emocionante torneo lleno de energía 
         donde los participantes y espectadores disfrutaron de un ambiente competitivo
@@ -12,6 +13,7 @@ const jsonData = [
     {
         tipo: "2",
     titulo: 'Cine Camp',
+    imagen: "/imgs/camp3.jpeg",
     descripcion: `El evento de cine camping en Campo Purpura ofreció una experiencia única al aire libre, 
                             combinando la proyeccion de peliculas con la posibilidad de acampar en un entorno natural.
                             que una oportunidad para disfrutar del cine bajo las estrellas en un ambiente relajado y social.. `,
@@ -19,6 +21,7 @@ const jsonData = [
     {
         tipo: "1",
     titulo: 'Fiesta de Hallow',
+    imagen: "/imgs/camp42.jpeg",
     descripcion: `El campeonato de futbol 
         en Campo Purpura reunió a equipos en un emocionante torneo lleno de energía 
         donde los participantes y espectadores disfrutaron de un ambiente competitivo
@@ -29,7 +32,7 @@ const jsonData = [
 
 {
     jsonData.map((noticia) => {
-        return (<Noticias titulo={noticia.titulo} descripcion={noticia.descripcion} tipo={noticia.tipo} />);
+        return (<Noticias titulo={noticia.titulo} descripcion={noticia.descripcion} tipo={noticia.tipo} imagen= {noticia.imagen} />);
 
     })
 }
