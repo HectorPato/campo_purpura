@@ -1,0 +1,40 @@
+---
+const servicios = [
+  { title: 'Cine Camp Purpura', link: '/servicio-1' },
+  { title: 'Areas de recreacion', link: '/servicio-2' },
+  { title: 'Otro tipo de servicio', link: '/servicio-3' },
+];
+---
+<div class="mis-servicios">
+    <div class="custom-container d-flex justify-content-between container w-80">
+        {servicios.map((servicio) => (
+            <div class="service d-flex flex-column justify-content-center">
+                <p class="p-0 m-0">{servicio.title}</p>
+                <a href={servicio.link}>Saber más <i class="fa-solid text-light fa-arrow-right ms-2"></i></a>
+            </div>
+        ))}
+    </div>
+</div>
+
+<style lang="scss">
+:global(.mis-servicios) {
+    position: relative;
+    color: #fff;
+    top: -19%;
+    z-index: 20;
+    .custom-container {
+        border-bottom: 1px solid #fff;
+        width: 80%;
+        .service {
+            padding: 2rem;
+            width: calc(20%);
+            height: calc(15vh);
+            a {
+                font-size: 14px;
+                color: #fff;
+            }
+        }
+    }
+    
+}
+</style>
