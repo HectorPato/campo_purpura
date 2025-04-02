@@ -1,48 +1,147 @@
-<div class="container mt-5 mb-4">
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img
-                    src="imgs/camp1.jpeg"
-                    class="d-block w-100"
-                    alt=""
-                    height="400"
-                />
-            </div>
-            <div class="carousel-item">
-                <img
-                    src="imgs/camp2.jpeg"
-                    class="d-block w-100"
-                    alt=""
-                    height="400"
-                />
-            </div>
-            <div class="carousel-item">
-                <img
-                    src="imgs/camp3.jpeg"
-                    class="d-block w-100"
-                    alt=""
-                    height="400"
-                />
-            </div>
-        </div>
-        <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="prev"
-        >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">previous</span>
-        </button>
-        <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExample"
-            data-bs-slide="next"
-        >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">next</span>
-        </button>
-    </div>
+---
+// Importaciones necesarias
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+---
+
+<!-- Swiper Slider con desplazamiento vertical -->
+ <div class="my-container">
+   
+   <div class="swiper mySwiper">
+     <div class="swiper-wrapper">
+         <div class="swiper-slide" style="background-image: url('imgs/camp51.jpg');    background-position: top;">
+             <div class="content">
+                 <h1>VISITA<br>CAMPO PURPURA</h1>
+                 <p>Vive la aventura, la magia y la diversión en un solo lugar..</p>
+             </div>
+         </div>
+         <div class="swiper-slide" style="background-image: url('imgs/camp50.jpg');">
+             <div class="content">
+                 <h1>DISCOVER<br>THE ALPS</h1>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             </div>
+         </div>
+         <div class="swiper-slide" style="background-image: url('https://swiperjs.com/demos/images/nature-3.jpg');">
+             <div class="content">
+                 <h1>EXPLORE<br>GRAND CANYON</h1>
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+             </div>
+         </div>
+     </div>
+   
+     <!-- Paginación personalizada -->
+     <div class="custom-pagination swiper-pagination"></div>
+   </div>
 </div>
+
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination } from 'swiper/modules';
+
+  // Configure Swiper to use modules
+  Swiper.use([Navigation, Pagination]);
+
+  // Initialize Swiper
+  new Swiper(".mySwiper", {
+    direction: "vertical",
+    loop: true,
+    parallax: true,
+    autoplay: true,
+    effect:'fade',
+    fadeEffect: {
+      crossFade: true
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+            return '<span class="dot m-3 ' + className + '">' + ('0' + (index + 1)) + "</span>";
+        },
+    },
+  });
+</script>
+
+<style>
+  :global(.my-container) {
+    * {
+            box-sizing: border-box;
+            /* font-family: Arial, sans-serif; */
+        }
+
+        body {
+            background: #000;
+        }
+
+        .swiper {
+            width: 100%;
+            height: calc(100vh - 20vh);
+            position: relative;
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Efecto oscuro sobre la imagen */
+        .swiper-slide::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.9));
+        }
+
+        /* Contenido del slide */
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .content p {
+            font-size: 16px;
+            margin-top: 10px;
+            max-width: 600px;
+        }
+
+  
+        .swiper-pagination-bullet {
+          background: none;
+        }
+        /* Indicador de paginación */
+        .custom-pagination {
+            position: absolute;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            z-index: 2;
+        }
+
+        .custom-background {
+          background: red!important;
+        }
+  }
+
+
+
+</style>

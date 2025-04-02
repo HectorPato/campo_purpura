@@ -1,5 +1,14 @@
 ---
 import Noticias from "./Noticias.astro";
+import { supabase } from "../../lib/supabase";
+
+const { data: noticias, error } = await supabase.from('noticias').select('*');
+
+console.log(noticias);
+if (error) {
+  console.error(error);
+}
+
 const jsonData = [
     {
         tipo: "1",
@@ -7,7 +16,7 @@ const jsonData = [
         descripcion: `El campeonato de futbol 
         en Campo Purpura reunió a equipos en un emocionante torneo lleno de energía 
         donde los participantes y espectadores disfrutaron de un ambiente competitivo
-        y al mismo tiempo familiar en un entorno natural ideal para actividades deportiva `,asdasdas
+        y al mismo tiempo familiar en un entorno natural ideal para actividades deportiva `,
     },
     {
         tipo: "2",
