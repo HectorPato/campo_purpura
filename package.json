@@ -13,5 +13,8 @@
     "astro": "^5.3.1",
     "module_name": "^1.0.0",
     "vue": "^3.5.13"
+  },
+  "devDependencies": {
+    "sass": "^1.86.3"
   }
 }

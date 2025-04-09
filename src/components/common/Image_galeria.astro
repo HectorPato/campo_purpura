@@ -1,0 +1,25 @@
+---
+const { src, width } = Astro.props
+
+const custom_width = width ?? '100%';
+---
+
+<div class="custom-item rounded" style={ 
+`
+    background-image: url(${src}); 
+    width: calc(${custom_width});  
+
+`
+}></div>
+<style lang="scss">
+    img {
+        margin: 5px;
+    }
+
+
+    .custom-item {
+        height: 200px;
+        width: calc(100%);
+        background-size: cover;
+    }
+</style>
