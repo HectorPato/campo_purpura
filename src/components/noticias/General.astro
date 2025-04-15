@@ -1,5 +1,14 @@
 ---
 import Noticias from "./Noticias.astro";
+import { supabase } from "../../lib/supabase";
+
+const { data: noticias, error } = await supabase.from('noticias').select('*');
+
+console.log(noticias);
+if (error) {
+  console.error(error);
+}
+
 const jsonData = [
     {
         tipo: "1",

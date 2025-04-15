@@ -1,0 +1,23 @@
+  @font-face {
+    font-family: 'CeraRoundPro';
+    src: url('/fonts/Fontspring-DEMO-ceraroundpro-regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'CeraRoundPro';
+    src: url('/fonts/Fontspring-DEMO-ceraroundpro-medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'CeraRoundPro';
+    src: url('/fonts/Fontspring-DEMO-ceraroundpro-thin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  body {
+    font-family: 'CeraRoundPro', sans-serif;
+  }
+  
